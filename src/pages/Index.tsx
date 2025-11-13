@@ -1,3 +1,5 @@
+import dnocapLogo from "@/assets/dnocap-logo.jpg";
+
 const Index = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
@@ -6,11 +8,11 @@ const Index = () => {
         <div className="text-center space-y-8">
           {/* Logo */}
           <div className="flex justify-center">
-            <div className="w-64 h-64 flex items-center justify-center">
-              <div className="text-foreground text-xl font-light tracking-wider">
-                [UPLOAD DNOCAP LOGO]
-              </div>
-            </div>
+            <img 
+              src={dnocapLogo} 
+              alt="DNOCAP" 
+              className="w-64 h-auto"
+            />
           </div>
           
           {/* Tagline */}
