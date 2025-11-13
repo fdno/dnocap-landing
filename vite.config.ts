@@ -4,9 +4,9 @@ import path from "path";
 import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
-  // Use root path for development/preview, GitHub Pages path for production
-  base: mode === "production" ? "/dnocap-landing/" : "/",
+export default defineConfig(() => ({
+  // Set base path for custom domain
+  base: "/",
 
   server: {
     host: "::",
@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => ({
 
   plugins: [
     react(),
-    mode === "development" && componentTagger(),
+    componentTagger(),
   ].filter(Boolean),
 
   resolve: {
