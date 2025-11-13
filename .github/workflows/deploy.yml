@@ -9,7 +9,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -20,12 +21,14 @@ jobs:
         run: npm install
 
       - name: Build project
-        run: npm run build
+        run: |
+          rm -rf dist     # clean old builds
+          npm run build
 
-      - name: Upload artifact
+      - name: Upload build artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: ./dist    # compiled Vite output
 
   deploy:
     needs: build
@@ -36,8 +39,10 @@ jobs:
 
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
