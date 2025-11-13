@@ -32,7 +32,7 @@ const Index = () => {
           >
             info@dnocap.com
           </a>
-          {" "}- France
+          {" "}
         </p>
       </footer>
     </div>
