@@ -6,7 +6,7 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   // Use root path for development/preview, GitHub Pages path for production
-  base: mode === "production" ? "/dnocap-lovable-landing/" : "/",
+  base: mode === "production" ? "/dnocap-landing/" : "/",
 
   server: {
     host: "::",
